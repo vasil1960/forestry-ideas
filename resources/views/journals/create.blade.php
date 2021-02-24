@@ -25,7 +25,7 @@
         <div class="col-md-12">
             <div class="card mt-4 shadow ">
                 <div class="card-header">
-                    <h3>Add New Journal</h3>
+                    <h3 class="py-3 font-weight-bold text-muted">Add New Journal</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('upload.journal') }}" enctype="multipart/form-data" >
@@ -43,8 +43,9 @@
                                             id="title"
                                             name="title"
                                             placeholder="Insert Journal Title"
-                                            {{-- value="Forestry Ideas" --}}
-                                            value="{{ old('title') }}">
+                                            value="Forestry Ideas"
+                                            value="{{ old('title') }}"
+                                            disabled>
                                     </div>
                                     <div class="form-group">
                                         <label for="year">

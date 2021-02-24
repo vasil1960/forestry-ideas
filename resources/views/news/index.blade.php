@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <div class="card mt-4 shadow">
                 <div class="card-header">
-                    <h3>News</h3>
+                    <h3 class="py-3 font-weight-bold text-muted">News</h3>
                 </div>
                 <div class="card-body">
                     News

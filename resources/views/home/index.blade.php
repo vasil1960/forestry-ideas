@@ -14,8 +14,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mt-4 shadow">
-                <div class="card-header">
-                    <h3 class="">Home Page</h3>
+                <div class="card-header bg-gradient">
+                    <h2 class="py-3  text-muted">Home Page</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -131,7 +131,7 @@
                                 Yaoqi <b>Zhang</b> - Auburn University, USA<br>
                             </p>
 
-                            <p class="card-text">
+                            <p class="card-text mb-3">
                                 Language Editors: Dilyanka <b>Bezlova</b>, Alexander <b>Delkov</b>, Yordanka <b>Ivanova</b>,
                                 Stefka
                                 <b>Kitanova</b>,

@@ -9,7 +9,7 @@ class UploadsController extends Controller
     public function uploadJournal(Request $request)
     {
         $request->validate([
-            'title'        => 'required|min:3',
+            // 'title'        => 'required|min:3',
             'year'         => 'required|digits:4',
             'volume'       => 'required|digits:2',
             'number'       => 'required|digits:1',
@@ -31,7 +31,8 @@ class UploadsController extends Controller
 
         # Save data to journal table
         $journal = new Journal();
-        $journal->journalTitle       = $request->title;
+        $journal->journalTitle       = "Forestry Ideas";
+        // $journal->journalTitle       = $request->title;
         $journal->journalYear        = $request->year;
         $journal->journalVolume      = $request->volume;
         $journal->journalNr          = $request->number;

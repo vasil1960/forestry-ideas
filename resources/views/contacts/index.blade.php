@@ -17,7 +17,7 @@
         <div class="col-md-12">
             <div class="card mt-4 shadow">
                 <div class="card-header">
-                    <h3>Contacts</h3>
+                    <h3 class="py-3 font-weight-bold text-muted">Contacts</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -26,7 +26,7 @@
                             <div class="card">
 
                                 <div class="card-header">
-                                    <h5>Send Email</h5>
+                                    <h4 class="text-muted">Send Email</h4>
                                 </div>
 
                                 <div class="card-body">
