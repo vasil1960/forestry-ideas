@@ -96,9 +96,9 @@
                                     <small
                                         id="fileHelpId"
                                         class="form-text text-muted">Select journal file</small>
-                                  </div>
+                                </div>
 
-                                  <div class="form-group">
+                                <div class="form-group">
                                       <label for="journal_content"><h4>Journal Content File</h4></label>
                                       <input
                                             type="file"
@@ -109,7 +109,8 @@
                                             aria-describedby="fileHelpId"
                                             {{-- value="{{ old('content_file') }}"> --}}
                                       <small id="fileHelpId" class="form-text text-muted">Select content file</small>
-                                    </div>
+                                </div>
+
                               </div>
                           </div>
 

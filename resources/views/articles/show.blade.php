@@ -80,7 +80,7 @@
 
                         <div class="mb-3">
 
-                            <a href="#">
+                            <a href="{{ route('article.download', $article->issueID) }}">
                                 <i class="bi-download" style="font-size: 1.5rem; color: rgb(5, 110, 92);"></i>
                             </a>
 

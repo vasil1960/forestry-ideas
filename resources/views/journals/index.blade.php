@@ -35,8 +35,10 @@
                                     <th scope="col">Year</th>
                                     <th scope="col">Volume</th>
                                     <th scope="col">Number</th>
+                                    <th scope="col" class="text-center">Downloads</th>
                                     <th scope="col"><i class="bi-download" style="font-size: 1.5rem; color: rgb(5, 110, 92);"></i></th>
                                     <th scope="col"><i class="bi-download" style="font-size: 1.5rem; color: rgb(5, 110, 92);"></i></th>
+                                    <th scope="col" class="text-right">Articles</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -47,11 +49,15 @@
                                         <td>{{ $journal->journalYear }}</td>
                                         <td class="text-left">Vol. {{ $journal->journalVolume }}</td>
                                         <td>Nr. {{ $journal->journalNr }}</td>
+                                        <td><p class="text-center">{{ $journal->journalCount }}</p></td>
                                         <td><a href="{{ route('journal.download', $journal->journalID) }}">Journal</a></td>
                                         <td><a href="{{ route('content.download', $journal->journalID) }}">Content</a></td>
+                                        @auth
+                                            <td><a href="{{ route('articles.create', $journal->journalID ) }}">Add</a></td>
+                                        @endauth
                                         <td class="text-right">
                                             <a href="{{ route('articles.index_all', $journal->journalID) }}">
-                                                <i class="bi bi-folder2-open"></i>
+                                                <i class="bi bi-folder2-open"></i>0
                                             </a>
                                         </td>
                                     </tr>

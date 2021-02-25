@@ -35,9 +35,10 @@ class ArticleIssueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $journal = Journal::find($id);
+        return view('articles.create', compact('journal'));
     }
 
     /**
@@ -48,7 +49,33 @@ class ArticleIssueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'title' => 'required|min:3',
+        //     'summary' => 'required',
+        //     'author' => 'required',
+        //     'from' => 'required',
+        //     'article_file' => 'required'
+        // ]);
+
+        // # Check if files are selected
+        // if ($request->hasFile('article_file')) {
+
+        //     # Upload Article File
+        //     $article_file = $request->file('article_file')->getClientOriginalName();
+        //     $path = $request->file('article_file')->storeAs('issue', $article_file, ['disk' => 'forestry']);
+        // }
+
+        // $article = new Article();
+        // $article->issueTitle = $request->title;
+        // $article->issueSummary = $request->summary;
+        // $article->issueAutor = $request->author;
+        // $article->issueFrom = $request->from;
+        // $article->issueFile = $request->article_file;
+        // $article->issueJournalID = $request->hiddenJournalId;
+
+        // $article->save();
+
+        // return redirect()->route('articles.show', $article->issueID);
     }
 
     /**

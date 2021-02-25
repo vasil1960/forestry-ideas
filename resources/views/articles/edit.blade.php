@@ -27,8 +27,8 @@
         <div class="col-md-12">
             <div class="card mt-4 shadow">
                 <div class="card-header">
-                    {{ $article->issueFile }}
-                </div>
+                    <h3>{{ $article->issueFile }} - file for download
+                    </div></h3>
                 <div class="card-body">
                     <form method="POST" action="{{ route('articles.update', $article->issueID) }}">
                         @csrf

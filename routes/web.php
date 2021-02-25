@@ -27,7 +27,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 #Contacts Page
-Route::get('contacts',[ContactsController::class, 'index'])->name('contacts.index');
+Route::get('contacts', [ContactsController::class, 'index'])->name('contacts.index');
 Route::post('contacts', [ContactsController::class, 'store'])->name('contacts.store');
 
 #News Page
@@ -40,6 +40,8 @@ Route::resource('journal', JournalsController::class);
 
 #Issue Page
 // Route::resource('articles', ArticleIssueController::class);
+Route::get('articles/{article}/create', [ArticleIssueController::class, 'create'])->name('articles.create');
+// Route::post('articles', [ArticleIssueController::class, 'store'])->name('articles.store');
 Route::get('articles/{article}', [ArticleIssueController::class, 'index_all'])->name('articles.index_all');
 Route::get('articles/{article}/edit', [ArticleIssueController::class, 'edit'])->name('articles.edit');
 Route::get('articles/{article}/show', [ArticleIssueController::class, 'show'])->name('articles.show');
@@ -52,3 +54,4 @@ Route::get('article/{article}/download', [DownloadsController::class, 'downloadA
 
 # Upload Files
 Route::post('upload/journal', [UploadsController::class, 'uploadJournal'])->name('upload.journal');
+Route::post('upload/article', [UploadsController::class, 'uploadArticle'])->name('upload.article');

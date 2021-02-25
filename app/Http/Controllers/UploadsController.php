@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Journal;
+use App\Models\Article;
 
 class UploadsController extends Controller
 {
@@ -18,15 +19,15 @@ class UploadsController extends Controller
         ]);
 
         # Check if files are selected
-        if($request->hasFile('journal_file') && $request->hasFile('content_file')){
+        if ($request->hasFile('journal_file') && $request->hasFile('content_file')) {
 
             # Upload Journal File
             $journal_file = $request->file('journal_file')->getClientOriginalName();
-            $path = $request->file('journal_file')->storeAs('journal', $journal_file, ['disk'=>'forestry']);
+            $path = $request->file('journal_file')->storeAs('journal', $journal_file, ['disk' => 'forestry']);
 
             # Upload Journal Content File
             $content_file = $request->file('content_file')->getClientOriginalName();
-            $path = $request->file('content_file')->storeAs('journal_content', $content_file, ['disk'=>'forestry']);
+            $path = $request->file('content_file')->storeAs('journal_content', $content_file, ['disk' => 'forestry']);
         }
 
         # Save data to journal table
@@ -43,5 +44,38 @@ class UploadsController extends Controller
 
 
         return redirect()->route('journal.index');
+    }
+
+    public function uploadArticle(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|min:3',
+            'summary' => 'required',
+            'author' => 'required',
+            'from' => 'required',
+            'article_file' => 'required|mimes:pdf'
+        ]);
+
+        # Check if files are selected
+        if ($request->hasFile('article_file')) {
+
+            # Upload Article File
+            $article_file = $request->file('article_file')->getClientOriginalName();
+            $path = $request->file('article_file')->storeAs('issue', $article_file, ['disk' => 'forestry']);
+        }
+
+        $article = new Article();
+        // dd($request->article_file);
+        // dd($request->article_file);
+        $article->issueTitle = $request->title;
+        $article->issueSummary = $request->summary;
+        $article->issueAutor = $request->author;
+        $article->issueFrom = $request->from;
+        $article->issueFile = $article_file;
+        $article->issueJournalID = $request->hiddenJournalId;
+
+        $article->save();
+
+        return redirect()->route('articles.show', $article->issueID);
     }
 }

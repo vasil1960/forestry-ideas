@@ -86,9 +86,10 @@
 
                             </div>
 
-
-                            <a href="{{ route('articles.edit', $article->issueID) }}">Edit</a>
-                            <a href="{{ route('articles.show', $article->issueID) }}">Show</a>
+                            @auth
+                                <a href="{{ route('articles.edit', $article->issueID) }}">Edit</a>
+                                <a href="{{ route('articles.show', $article->issueID) }}">Show</a>
+                            @endauth
 
                         </div>
                     </div>
