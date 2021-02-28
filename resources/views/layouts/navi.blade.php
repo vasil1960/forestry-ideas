@@ -14,20 +14,20 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home.index') }}">{{ __('Home Page') }}</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('home.index') }}">{{ __('Home Page') }}</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('news.index') }}">{{ __('News') }}</a>
+                    <a class="nav-link {{ Request::is('news') ? 'active' : '' }}" href="{{ route('news.index') }}">{{ __('News') }}</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('journal.index') }}">{{ __('Contents') }}</a>
+                    <a class="nav-link {{ Request::is('journal') ? 'active' : '' }}" href="{{ route('journal.index') }}">{{ __('Contents') }}</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="">{{ __('Instruction To Authors') }}</a>
+                    <a class="nav-link {{ Request::is('instructions') ? 'active' : '' }}"
+                        href="{{ route('instructions.index') }}">{{ __('Instruction To Authors') }}</a>
                 </li>
 
                 <li class="nav-item">
@@ -39,13 +39,13 @@
                 {{-- <a class="nav-link" href="{{ route('pages.issue') }}">{{ __('Issue') }}</a> --}}
                 {{-- </li> --}}
 
-                <li class="nav-item">
+                <li class="nav-item {{ Request::is('contacts') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('contacts.index') }}">{{ __('Contacts') }}</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="">{{ __('Conferences') }}</a>
+                    <a class="nav-link {{ Request::is('conferences') ? 'active' : '' }}"
+                        href="{{ route('conferences.index') }}">{{ __('Conferences') }}</a>
                 </li>
 
                 <li class="nav-item">

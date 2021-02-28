@@ -8,6 +8,8 @@ use App\Http\Controllers\ArticleIssueController;
 use App\Http\Controllers\JournalsController;
 use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\UploadsController;
+use App\Http\Controllers\InstructionsController;
+use App\Http\Controllers\ConferencesController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -32,6 +34,12 @@ Route::post('contacts', [ContactsController::class, 'store'])->name('contacts.st
 
 #News Page
 Route::get('news', [NewsController::class, 'index'])->name('news.index');
+Route::get('news/create', [NewsController::class, 'create'])->name('news.create');
+Route::post('news/store', [NewsController::class, 'store'])->name('news.store');
+Route::get('news/{news}/edit', [NewsController::class, 'edit'])->name('news.edit');
+Route::put('news/{news}', [NewsController::class, 'update'])->name('news.update');
+
+
 
 #Contents Page
 // Route::get('contents', [ContentsController::class, 'index'])->name('contents.index');
@@ -55,3 +63,14 @@ Route::get('article/{article}/download', [DownloadsController::class, 'downloadA
 # Upload Files
 Route::post('upload/journal', [UploadsController::class, 'uploadJournal'])->name('upload.journal');
 Route::post('upload/article', [UploadsController::class, 'uploadArticle'])->name('upload.article');
+
+# Instructions yo the authors
+Route::get('instructions', [InstructionsController::class, 'index'])->name('instructions.index');
+Route::get('instructions/{instructions}/edit', [InstructionsController::class, 'edit'])->name('instructions.edit');
+Route::put('instructions/{article}', [InstructionsController::class, 'update'])->name('instructions.update');
+
+# Conferences
+Route::get('conferences', [ConferencesController::class, 'index'])->name('conferences.index');
+Route::get('conferences/{conferences}/edit', [ConferencesController::class, 'edit'])->name('conferences.edit');
+Route::put('conferences/{conferences}', [ConferencesController::class, 'update'])->name('conferences.update');
+

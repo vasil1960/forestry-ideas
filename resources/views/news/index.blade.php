@@ -17,8 +17,18 @@
                 <div class="card-header">
                     <h3 class="py-3 font-weight-bold text-muted">News</h3>
                 </div>
-                <div class="card-body">
-                    News
+                <div class="card-body shadow">
+                    @foreach ($news as $new)
+                        <div class="card-body">
+                            <p>{!! $new->newsText !!}</p>
+                            <p class="text-right">{{ $new->newsDatum }}</p>
+                            @auth
+                                <a class="btn btn-secondary" href="{{ route('news.edit', $new->newsID) }}">Edit</a>
+                            @endauth
+                            <hr class="shadow">
+                        </div>
+
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Conference;
 use Illuminate\Http\Request;
-use App\Models\News;
 
-class NewsController extends Controller
+class ConferencesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        $news = News::orderBy('newsID', 'DESC')->get();
-        return view('news.index',[
-                        'news'=> $news
-                    ]);
+        $conferences = Conference::find(12);
+        return view('conferences.index', [
+            'conferences' => $conferences
+        ]);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -29,7 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('news.create');
+        //
     }
 
     /**
@@ -40,18 +38,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'news' => 'required'
-        ]);
-
-        $news = new News();
-        $news->newsText = $request->news;
-        $news->newsYear = date('Y', strtotime(now()));
-        $news->newsDatum = date('d.m.Y', strtotime(now()));
-
-        $news->save();
-
-        return redirect()->route('news.index');
+        //
     }
 
     /**
@@ -73,9 +60,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news = News::find($id);
-        return view('news.edit',[
-            'news' => $news
+        $conferences = Conference::find($id);
+        return view('conferences.edit', [
+            'conferences' => $conferences
         ]);
     }
 
@@ -89,17 +76,15 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'news' => 'required'
+            'conferences' => 'required'
         ]);
 
-        $news = News::find($id);
-        $news->newsText = $request->news;
-        // $news->newsYear = date('Y', strtotime(now()));
-        // $news->newsDatum = date('d.m.Y', strtotime(now()));
+        $conferences = Conference::find($id);
 
-        $news->save();
+        $conferences->confTitle = $request->conferences;
+        $conferences->save();
 
-        return redirect()->route('news.index');
+        return redirect()->route('conferences.index');
     }
 
     /**
