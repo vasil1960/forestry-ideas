@@ -10,6 +10,8 @@ use App\Http\Controllers\DownloadsController;
 use App\Http\Controllers\UploadsController;
 use App\Http\Controllers\InstructionsController;
 use App\Http\Controllers\ConferencesController;
+use App\Http\Controllers\PubEthicsController;
+use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -73,4 +75,14 @@ Route::put('instructions/{article}', [InstructionsController::class, 'update'])-
 Route::get('conferences', [ConferencesController::class, 'index'])->name('conferences.index');
 Route::get('conferences/{conferences}/edit', [ConferencesController::class, 'edit'])->name('conferences.edit');
 Route::put('conferences/{conferences}', [ConferencesController::class, 'update'])->name('conferences.update');
+
+# Pub Ethics
+Route::get('pub-ethics', [PubEthicsController::class, 'index'])->name('pub-ethics.index');
+Route::get('pub-ethics/{pubethics}/edit', [PubEthicsController::class, 'edit'])->name('pub-ethics.edit');
+Route::put('pub-ethics/{pubethics}', [PubEthicsController::class, 'update'])->name('pub-ethics.update');
+
+# Subscription
+Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
+Route::get('subscription/{subscription}/edit', [SubscriptionController::class, 'edit'])->name('subscription.edit');
+Route::put('subscription/{subscription}', [SubscriptionController::class, 'update'])->name('subscription.update');
 

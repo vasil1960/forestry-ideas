@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Conferences')
+@section('title', 'Subscription')
 
 @section('sidebar')
     @parent
@@ -21,19 +21,16 @@
                     </div>
                 @endif
                 <div class="card-header">
-                    <h3 class="py-3 font-weight-bold text-muted">Conferences</h3>
+                    <h3 class="py-3 font-weight-bold text-muted">Subscription</h3>
                 </div>
                 <div class="card-body shadow">
-
-                        <div class="card-body">
-                            <p>{!! $conferences->confTitle !!}</p>
-
-                            @auth
-                                <a class="btn btn-secondary" href="{{ route('conferences.edit', $conferences->confID) }}">Edit</a>
-                            @endauth
-                            <hr class="shadow">
-                        </div>
-
+                    <div class="card-body">
+                        <p>{!! $subscr->content !!}</p>
+                        @auth
+                            <a class="btn btn-secondary" href="{{ route('subscription.edit', $subscr->id) }}">Edit</a>
+                        @endauth
+                        <hr class="shadow">
+                    </div>
                 </div>
             </div>
         </div>

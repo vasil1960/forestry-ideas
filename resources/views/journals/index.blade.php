@@ -13,6 +13,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mt-4 shadow">
+                <!-- Alert User -->
+                @if (Session::has('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
                 <div class="card-header">
                     <h3 class="py-3 font-weight-bold text-muted">Contents</h3>
                 </div>

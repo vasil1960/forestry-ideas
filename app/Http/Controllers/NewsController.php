@@ -51,7 +51,7 @@ class NewsController extends Controller
 
         $news->save();
 
-        return redirect()->route('news.index');
+        return redirect()->route('news.index')->with(['success' => 'News Save Successfully']);
     }
 
     /**

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Conference;
+use App\Models\PubEthics;
 use Illuminate\Http\Request;
 
-class ConferencesController extends Controller
+class PubEthicsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class ConferencesController extends Controller
      */
     public function index()
     {
-        $conferences = Conference::find(12);
-        return view('conferences.index', [
-            'conferences' => $conferences
+        $pubEthics = PubEthics::find(1);
+        return view('pub-ethics.index',[
+            'pubEthics' => $pubEthics
         ]);
     }
 
@@ -44,10 +44,10 @@ class ConferencesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\PubEthics  $pubEthics
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(PubEthics $pubEthics)
     {
         //
     }
@@ -55,14 +55,14 @@ class ConferencesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\PubEthics  $pubEthics
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $conferences = Conference::find($id);
-        return view('conferences.edit', [
-            'conferences' => $conferences
+        $pubEthics = PubEthics::find($id);
+        return view('pub-ethics.edit', [
+            'pubEthics' => $pubEthics
         ]);
     }
 
@@ -70,30 +70,29 @@ class ConferencesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\PubEthics  $pubEthics
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $request->validate([
-            'conferences' => 'required'
+            'pubEthics' => 'required'
         ]);
 
-        $conferences = Conference::find($id);
+        $pubEthics = PubEthics::find($id);
+        $pubEthics->content = $request->pubEthics;
+        $pubEthics->save();
 
-        $conferences->confTitle = $request->conferences;
-        $conferences->save();
-
-        return redirect()->route('conferences.index')->with(['success' => 'Conferences Update Successfully']);
+        return redirect()->route('pub-ethics.index')->with(['success' => 'Publication Ethics Update Successfully']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\PubEthics  $pubEthics
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(PubEthics $pubEthics)
     {
         //
     }

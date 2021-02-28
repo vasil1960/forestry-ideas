@@ -45,9 +45,11 @@
 
             <div class="jumbotron bg text-white">
                 <div class="container">
-                    <h1 class="display-1 font-weight-normal">Forestry Ideas</h1>
+                    <h1 class="display-3 font-weight-normal">Forestry Ideas</h1>
                     <p class="lead">Ecological Science and Forestry Ecology is the scientific study of organisms in
                         relation to the physical and biological environment.</p>
+                    <p class="">ISSN 1314-3905(Print)</p>
+                    <p class="">ISSN 2603-2996(Online)</p>
                     {{-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> --}}
                 </div>
             </div>

@@ -35,6 +35,6 @@ class InstructionsController extends Controller
         $instructions->instrText = $request->instructions;
         $instructions->save();
 
-        return redirect()->route('instructions.index');
+        return redirect()->route('instructions.index')->with(['success' => 'Instructions Update Successfully']);
     }
 }

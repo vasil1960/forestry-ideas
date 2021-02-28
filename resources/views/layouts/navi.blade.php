@@ -31,13 +31,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="">{{ __('Subscription') }}</a>
+                    <a class="nav-link {{ Request::is('subscription') ? 'active' : '' }}"
+                        href="{{ route('subscription.index') }}">{{ __('Subscription') }}</a>
                 </li>
-
-                {{-- <li class="nav-item"> --}}
-                {{-- <a class="nav-link" href="{{ route('pages.issue') }}">{{ __('Issue') }}</a> --}}
-                {{-- </li> --}}
 
                 <li class="nav-item {{ Request::is('contacts') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('contacts.index') }}">{{ __('Contacts') }}</a>
@@ -49,8 +45,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="">{{ __('Publication Ethics') }}</a>
+                    <a class="nav-link {{ Request::is('pub-ethics') ? 'active' : '' }}"
+                        href="{{ route('pub-ethics.index') }}">{{ __('Publication Ethics') }}</a>
                 </li>
 
             </ul>

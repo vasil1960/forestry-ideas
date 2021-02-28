@@ -76,6 +76,6 @@ class UploadsController extends Controller
 
         $article->save();
 
-        return redirect()->route('articles.show', $article->issueID);
+        return redirect()->route('articles.show', $article->issueID)->with(['success' => 'Article Upload and Save Successfully']);
     }
 }
