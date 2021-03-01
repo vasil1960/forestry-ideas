@@ -13,12 +13,21 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/lightbox.js') }}" defer></script>
-    <script src="https://cdn.tiny.cloud/1/p7sn2ffanek16bxhnsjzzr66m2g4spad3g1ezo8jc50027dj/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script
+        src="https://cdn.tiny.cloud/1/p7sn2ffanek16bxhnsjzzr66m2g4spad3g1ezo8jc50027dj/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin">
+    </script>
+    <script src="{{ asset('js/myscripts.js') }}" defer></script>
     <script>
-        tinymce.init({
-            selector: 'textarea'
-        });
+        // tinymce.init({
+        //     selector: 'textarea',
+        //     height: 500,
+        //     plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+        //     toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+        //     toolbar_mode: 'floating',
+        //     tinycomments_mode: 'embedded',
+        //     tinycomments_author: 'Author name',
+        // });
 
     </script>
 
@@ -45,11 +54,13 @@
 
             <div class="jumbotron bg text-white">
                 <div class="container">
-                    <h1 class="display-3 font-weight-normal">Forestry Ideas</h1>
-                    <p class="lead">Ecological Science and Forestry Ecology is the scientific study of organisms in
+                    <h1 class="display-3 font-weight-bold p-3">Forestry Ideas</h1>
+                    <p class="lead p-3">Ecological Science and Forestry Ecology is the scientific study of organisms in
                         relation to the physical and biological environment.</p>
-                    <p class="">ISSN 1314-3905(Print)</p>
-                    <p class="">ISSN 2603-2996(Online)</p>
+
+                        <p class="pl-3" ><small>ISSN 1314-3905 (Print)</small></p>
+                        <p class="pl-3" ><small>ISSN 2603-2996 (Online)</small></p>
+
                     {{-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> --}}
                 </div>
             </div>

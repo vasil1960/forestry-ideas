@@ -26,7 +26,7 @@
                                 <h4>Subscription</h4>
                             </label>
                             <textarea class="form-control" id="subscr" name="subscr"
-                                rows="6">{!! $subscr->content !!}</textarea>
+                                rows="12">{!! $subscr->content !!}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
