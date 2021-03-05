@@ -31,13 +31,26 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <form method="POST" action="{{ route('upload.article') }}" enctype="multipart/form-data">
-
-
+                                @csrf
                                 <input type="hidden" name="hiddenJournalId" id="hiddenJournalId" value="{{ $journal->journalID }}" >
 
-
+                                <div class="form-group">
+                                    <label for="article_file"><h4>Article File</h4></label>
+                                    <input
+                                        type="file"
+                                        class="form-control-file"
+                                        name="article_file"
+                                        id="article_file"
+                                        placeholder="Select Article File (pdf)"
+                                        aria-describedby="fileHelpId"
+                                        {{-- value="{{ old('journal_file') }}"> --}}
+                                        >
+                                    <small
+                                        id="fileHelpId"
+                                        class="form-text text-muted">Select Article file</small>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="title">
@@ -73,25 +86,8 @@
 
 
                                 <button type="submit" class="btn btn-primary">Submit</button>
+
                             </form>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="article_file"><h4>Article File</h4></label>
-                                <input
-                                    type="file"
-                                    class="form-control-file"
-                                    name="article_file"
-                                    id="article_file"
-                                    placeholder="Select Article File (pdf)"
-                                    aria-describedby="fileHelpId"
-                                    {{-- value="{{ old('journal_file') }}"> --}}
-                                    >
-                                <small
-                                    id="fileHelpId"
-                                    class="form-text text-muted">Select Article file</small>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

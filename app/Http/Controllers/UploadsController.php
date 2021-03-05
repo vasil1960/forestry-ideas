@@ -48,6 +48,8 @@ class UploadsController extends Controller
 
     public function uploadArticle(Request $request)
     {
+
+        // dd($request);
         $request->validate([
             'title' => 'required|min:3',
             'summary' => 'required',
@@ -65,8 +67,7 @@ class UploadsController extends Controller
         }
 
         $article = new Article();
-        // dd($request->article_file);
-        // dd($request->article_file);
+
         $article->issueTitle = $request->title;
         $article->issueSummary = $request->summary;
         $article->issueAutor = $request->author;
