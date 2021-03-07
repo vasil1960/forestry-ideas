@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <div class="card mt-4 shadow">
                 <div class="card-header bg-gradient">
-                    <h2 class="py-3  text-muted">Home Page</h3>
+                    <h2 class="py-3  text-muted">Home Page</h2>
                 </div>
                 <div class="card-body">
                     <div class="row">

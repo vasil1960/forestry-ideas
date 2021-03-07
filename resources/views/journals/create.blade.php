@@ -44,7 +44,7 @@
                                             name="title"
                                             placeholder="Insert Journal Title"
                                             value="Forestry Ideas"
-                                            value="{{ old('title') }}"
+{{--                                            value="{{ old('title') }}"--}}
                                             disabled>
                                     </div>
                                     <div class="form-group">
@@ -91,7 +91,7 @@
                                         name="journal_file"
                                         id="journal_file"
                                         placeholder="Select Journal File (pdf)"
-                                        aria-describedby="fileHelpId"
+                                        aria-describedby="fileHelpId">
                                         {{-- value="{{ old('journal_file') }}"> --}}
                                     <small
                                         id="fileHelpId"
@@ -106,7 +106,7 @@
                                             name="content_file"
                                             id="content_file"
                                             placeholder="Select Journal File (pdf)"
-                                            aria-describedby="fileHelpId"
+                                            aria-describedby="fileHelpId">
                                             {{-- value="{{ old('content_file') }}"> --}}
                                       <small id="fileHelpId" class="form-text text-muted">Select content file</small>
                                 </div>

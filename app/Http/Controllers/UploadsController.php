@@ -9,14 +9,7 @@ class UploadsController extends Controller
 {
     public function uploadJournal(Request $request)
     {
-        $request->validate([
-            // 'title'        => 'required|min:3',
-            'year'         => 'required|digits:4',
-            'volume'       => 'required|digits:2',
-            'number'       => 'required|digits:1',
-            'journal_file' => 'required|mimes:pdf',
-            'content_file' => 'required|mimes:pdf',
-        ]);
+        $request->validate(['year' => 'required|digits:4', 'volume' => 'required|digits:2', 'number' => 'required|digits:1', 'journal_file' => 'required|mimes:pdf', 'content_file' => 'required|mimes:pdf']);
 
         # Check if files are selected
         if ($request->hasFile('journal_file') && $request->hasFile('content_file')) {

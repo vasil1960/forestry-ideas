@@ -42,8 +42,8 @@
                                     <th scope="col">Volume</th>
                                     <th scope="col">Number</th>
                                     <th scope="col" class="text-center">Downloads</th>
-                                    <th scope="col">Journal</i></th>
-                                    <th scope="col">Content</i></th>
+                                    <th scope="col">Journal</th>
+                                    <th scope="col">Content</th>
                                     <th scope="col" class="text-right">Articles</th>
                                     <th scope="col"></th>
                                 </tr>
